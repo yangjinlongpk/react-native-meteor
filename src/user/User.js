@@ -55,6 +55,17 @@ module.exports = {
       typeof callback == 'function' && callback(err);
     });
   },
+  loginWithSMS(mobile, code, callback) {
+    this._startLoggingIn();
+    call("verifyCode2app", mobile, code, (err, result)=>{
+      if(err) return callback(err,result);
+      this._endLoggingIn();
+      //console.log(result);
+      this._loginWithToken(result.token);
+      this._handleLoginCallback(err, result);
+      typeof callback == 'function' && callback(err);
+    });
+  },
   logoutOtherClients(callback = ()=>{}) {
     call('getNewToken', (err, res) => {
       if(err) return callback(err);
