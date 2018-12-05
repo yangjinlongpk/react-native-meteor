@@ -63,7 +63,7 @@ module.exports = {
       //console.log(result);
       this._loginWithToken(result.token);
       this._handleLoginCallback(err, result);
-      typeof callback == 'function' && callback(err);
+      typeof callback == 'function' && callback(err,result);
     });
   },
   logoutOtherClients(callback = ()=>{}) {
