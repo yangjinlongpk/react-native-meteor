@@ -34,7 +34,7 @@
     "react-komposer": "1.8.0",
     "react-mixin": "3.0.3",
     "trackr": "2.0.2",
-    "underscore": "1.8.3",
+    "underscore": "1.12.1",
     "wolfy87-eventemitter": "4.3.0"
   },
   "devDependencies": {
